@@ -46,6 +46,7 @@ export default function GestureDrawCanvas() {
     onFrame: (data) => {
       const now = Date.now();
 
+      // Change Color
       if (data.thumbUp) {
         if (!thumbUpStartRef.current) {
           thumbUpStartRef.current = now;
@@ -63,6 +64,7 @@ export default function GestureDrawCanvas() {
         thumbUpLockedRef.current = false;
       }
 
+      // Clear Canvas
       if (data.thumbDown) {
         if (!thumbDownStartRef.current) {
           thumbDownStartRef.current = now;
@@ -148,27 +150,18 @@ export default function GestureDrawCanvas() {
       window.removeEventListener("resize", resize);
     };
   }, [colorIndex]);
-
   return (
     <>
-      <video
-        ref={camera.videoRef}
-        className="hidden"
-        autoPlay
-        playsInline
-        muted
-      />
+      {camera.status == "denied" && (
+        <p className="absolute text-lg left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          Please allow camera access
+        </p>
+      )}
+      <div className="w-44 rounded-lg ring-2 ring-indigo-400 ring-offset-3 shadow-lg shadow-indigo-800 ring-offset-background overflow-hidden fixed bottom-5 left-5">
+        <video ref={camera.videoRef} autoPlay playsInline muted />
+      </div>
 
       <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none" />
-
-      {/* 🎨 color indicator */}
-      <div className="fixed top-6 right-6 flex items-center gap-2 z-50">
-        <div
-          className="w-4 h-4 rounded-full"
-          style={{ background: COLORS[colorIndex] }}
-        />
-        <span className="text-white text-sm">Color</span>
-      </div>
     </>
   );
 }

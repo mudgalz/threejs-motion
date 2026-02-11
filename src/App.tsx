@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import { AxelRings, Clocks, Home, SunRaymarch, ThreeGallery } from "./pages";
-import BlockBreaker from "./pages/block-breaker";
 import FingerTrail from "./pages/finger-trail";
 
 export default function App() {
@@ -13,7 +12,6 @@ export default function App() {
         <Route path="/sunset-raymarch" element={<SunRaymarch />} />
         <Route path="/clocks" element={<Clocks />} />
         <Route path="/finger-trail" element={<FingerTrail />} />
-        <Route path="/block-breaker" element={<BlockBreaker />} />
       </Routes>
 
       <a

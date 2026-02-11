@@ -42,7 +42,6 @@ export function useHandTracking({ video, onFrame }: Props) {
           detected: false,
           thumbUp: false,
           thumbDown: false,
-          pinch: false,
         });
         return;
       }
@@ -52,28 +51,25 @@ export function useHandTracking({ video, onFrame }: Props) {
       const indexTip = lm[8];
       const indexPip = lm[6];
 
+      // Inside useHandTracking (onResults)
+      const middleTip = lm[12]; // Add middle finger for better folded detection
+
       const thumbTip = lm[4];
       const thumbIp = lm[3];
-      const thumbMcp = lm[2];
 
+      // A finger is "folded" if the tip is below the joint (PIP)
       const indexFolded = indexTip.y > indexPip.y;
+      const middleFolded = middleTip.y > lm[10].y;
 
-      const thumbUp =
-        thumbTip.y < thumbIp.y && thumbIp.y < thumbMcp.y && indexFolded;
-
-      const thumbDown =
-        thumbTip.y > thumbIp.y && thumbIp.y > thumbMcp.y && indexFolded;
-
-      const dx = thumbTip.x - indexTip.x;
-      const dy = thumbTip.y - indexTip.y;
-      const pinch = Math.sqrt(dx * dx + dy * dy) < 0.05;
+      // IMPROVED: Only trigger thumb gestures if drawing finger is tucked in
+      const thumbUp = thumbTip.y < thumbIp.y && indexFolded && middleFolded;
+      const thumbDown = thumbTip.y > thumbIp.y && indexFolded && middleFolded;
 
       onFrame({
         detected: true,
-        indexFinger: { x: indexTip.x, y: indexTip.y },
+        indexFinger: indexFolded ? undefined : { x: indexTip.x, y: indexTip.y },
         thumbUp,
         thumbDown,
-        pinch,
       });
     });
 

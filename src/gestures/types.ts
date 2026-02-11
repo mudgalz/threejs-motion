@@ -8,7 +8,6 @@ export interface GestureFrame {
   thumbUp: boolean;
   thumbDown: boolean;
   detected: boolean;
-  pinch: boolean;
 }
 
 export type CameraStatus = "idle" | "requesting" | "ready" | "denied" | "error";

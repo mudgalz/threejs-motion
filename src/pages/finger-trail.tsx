@@ -17,7 +17,7 @@ const FingerTrail = () => {
 
       <FingerTrailCanvas />
 
-      <BottomInfoText text="Move your finger to draw in the air." />
+      <BottomInfoText text="Move your hand (Palm) to draw in the air. Thumbs up to switch color and thumbs down to clear." />
     </>
   );
 };
