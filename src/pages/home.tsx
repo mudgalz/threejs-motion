@@ -26,6 +26,18 @@ const pages = [
     name: "Clocks",
     desc: "A collection of interactive and animated clocks including digital, stopwatch, and pomodoro timer.",
   },
+  {
+    id: 5,
+    url: "/finger-trail",
+    name: "Gesture Draw",
+    desc: "Draw in the air with your hand. Switch colors with thumbs up and clear the canvas using thumbs down.",
+  },
+  {
+    id: 6,
+    url: "/block-breaker",
+    name: "Air Smash",
+    desc: "Aim with your hand and pinch to smash incoming blocks in this gesture-controlled arcade game.",
+  },
 ];
 
 export default function Home() {

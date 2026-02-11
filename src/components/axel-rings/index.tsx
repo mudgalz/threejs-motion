@@ -19,7 +19,7 @@ const ShaderPlane: React.FC = () => {
     const handleMouse = (e: MouseEvent) => {
       uniforms.mouse.value.set(
         e.clientX / window.innerWidth,
-        1 - e.clientY / window.innerHeight
+        1 - e.clientY / window.innerHeight,
       );
     };
     const handleResize = () => {

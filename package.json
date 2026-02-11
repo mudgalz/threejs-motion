@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "@mediapipe/drawing_utils": "^0.3.1675466124",
+    "@mediapipe/hands": "^0.4.1675469240",
     "@paper-design/shaders-react": "0.0.57",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "2.1.16",
@@ -36,6 +39,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.33.0",
+    "@types/dom-mediacapture-record": "^1.0.22",
     "@types/node": "24.3.1",
     "@types/react": "19.1.10",
     "@types/react-dom": "19.1.7",
