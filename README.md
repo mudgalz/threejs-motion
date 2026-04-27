@@ -35,5 +35,5 @@ Check out the live version: [Three Shaders Collection](https://motion-widgets.ve
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:mudgalz/motion-widgets.git
+git clone git@github.com:mudgalz/threejs-motion.git
 ```
