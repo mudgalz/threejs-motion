@@ -12,12 +12,18 @@ Explore interactive WebGL shaders built with **Three.js** and **React**. This pr
 
 3. **Infinite Gallery**
    An infinite image scroll gallery powered by shaders, with smooth transitions, blur effects, and live interactions.
+   
+4. **Clocks**
+   A collection of interactive clocks featuring digital time displays, a stopwatch, and a Pomodoro timer with smooth animations and intuitive controls.
+
+5. **Camera Gesture Draw**
+   A gesture-controlled drawing experience that lets you create artwork in the air using hand tracking, with gesture-based color switching and canvas clearing.
 
 ---
 
 ## Live Demo
 
-Check out the live version: [Three Shaders Collection](https://motion-widgets.vercel.app/)
+Check out the live version: [Three Shaders Collection](https://threejs-motion.vercel.app/)
 
 ---
 

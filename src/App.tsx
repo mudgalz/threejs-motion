@@ -16,10 +16,10 @@ export default function App() {
 
       <a
         tabIndex={-1}
-        href="https://mudgal.framer.ai"
+        href="https://github.com/mudgalz/threejs-motion"
         target="_blank"
-        className="fixed bottom-2 right-2 text-xs text-gray-400/50">
-        Here I'm
+        className="fixed bottom-2 right-2 text-xs text-gray-100">
+        Github
       </a>
     </>
   );
